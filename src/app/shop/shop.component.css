@@ -2139,4 +2139,7 @@ body {
   #footer .credits a:hover {
     color: white;
   }
+  .card-footer{
+    background-color: lightgray;
+  }
   
