@@ -1,14 +1,9 @@
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center">
     <h1 class="logo"><a href="index.html">Tunisia Foood</a></h1>
-    <!-- Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
     <a class="get-started-btn ml-auto" style="cursor: pointer;">Magasin</a>
   </div>
 </header>
-
-<!-- Page Content -->
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
@@ -18,40 +13,35 @@
           (click)="toggleDisplay1()"
           style="cursor: pointer;"
           class="list-group-item"
-          >Tout Category</a
+          >Boisson</a
         >
         <a
           (click)="toggleDisplay2()"
           style="cursor: pointer;"
           class="list-group-item"
-          >Boisson</a
+          >Ptite Dejeuner</a
         >
         <a
           (click)="toggleDisplay3()"
           style="cursor: pointer;"
           class="list-group-item"
-          >Ptite Dej</a
+          >Epicerie</a
+        >
+        <a
+          (click)="toggleDisplay4()"
+          style="cursor: pointer;"
+          class="list-group-item"
+          >Féculents</a
+        >
+        <a
+          (click)="toggleDisplay5()"
+          style="cursor: pointer;"
+          class="list-group-item"
+          >Huile</a
         >
       </div>
     </div>
-    <!-- /.col-lg-3 -->
-
     <div class="col-lg-9">
-      <!-- <div
-        id="carouselExampleIndicators"
-        class="carousel slide my-4"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
-            <img
-              class="d-block img-fluid"
-              src="http://placehold.it/900x350"
-              alt="First slide"
-            />
-          </div>
-        </div>
-      </div> -->
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -102,9 +92,9 @@
       <br />
       <br />
       <div *ngIf="isDisplay1" class="row">
-        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of items">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of boisson">
           <div class="card h-100">
-            <a href="#"
+            <a
               ><img
                 style="height: 200px; width: 200px;"
                 class="card-img-top"
@@ -113,7 +103,7 @@
             /></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{this.element?.title}}</a>
+                <a>{{this.element?.title}}</a>
               </h4>
               <h5>{{this.element?.price}}</h5>
               <p class="card-text">desc</p>
@@ -123,9 +113,9 @@
         </div>
       </div>
       <div *ngIf="isDisplay2" class="row">
-        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of items2">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of ptiteDej">
           <div class="card h-100">
-            <a href="#"
+            <a
               ><img
                 style="height: 200px; width: 200px;"
                 class="card-img-top"
@@ -134,7 +124,7 @@
             /></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{this.element?.title}}</a>
+                <a>{{this.element?.title}}</a>
               </h4>
               <h5>{{this.element?.price}}</h5>
               <p class="card-text">desc</p>
@@ -144,9 +134,9 @@
         </div>
       </div>
       <div *ngIf="isDisplay3" class="row">
-        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of items3">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of epicerie">
           <div class="card h-100">
-            <a href="#"
+            <a
               ><img
                 style="height: 200px; width: 200px;"
                 class="card-img-top"
@@ -155,7 +145,7 @@
             /></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{this.element?.title}}</a>
+                <a>{{this.element?.title}}</a>
               </h4>
               <h5>{{this.element?.price}}</h5>
               <p class="card-text">desc!</p>
@@ -164,17 +154,53 @@
           </div>
         </div>
       </div>
-      <!-- /.row -->
+      <div *ngIf="isDisplay4" class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of feculents">
+          <div class="card h-100">
+            <a
+              ><img
+                style="height: 200px; width: 200px;"
+                class="card-img-top"
+                src="{{this.element?.imageUrl}}"
+                alt=""
+            /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a>{{this.element?.title}}</a>
+              </h4>
+              <h5>{{this.element?.price}}</h5>
+              <p class="card-text">desc!</p>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isDisplay5" class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let element of huile">
+          <div class="card h-100">
+            <a
+              ><img
+                style="height: 200px; width: 200px;"
+                class="card-img-top"
+                src="{{this.element?.imageUrl}}"
+                alt=""
+            /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a>{{this.element?.title}}</a>
+              </h4>
+              <h5>{{this.element?.price}}</h5>
+              <p class="card-text">desc!</p>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.col-lg-9 -->
   </div>
-  <!-- /.row -->
 </div>
-<!-- /.container -->
-
-<!-- Footer -->
 <footer class="py-5 bg-dark">
   <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    <p class="m-0 text-center text-white">Copyright &copy; Access team 2020</p>
   </div>
 </footer>
